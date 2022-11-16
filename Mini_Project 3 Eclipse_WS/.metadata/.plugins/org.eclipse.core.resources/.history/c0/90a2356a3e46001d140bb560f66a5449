@@ -1,0 +1,26 @@
+/*
+ * Mini_project3_test.c
+ *
+ *  Created on: Oct 6, 2022
+ *      Author: Abdelrahman Ali Mohamed
+ */
+
+
+#include "lcd.h"
+#include "DC_motor.h"
+
+
+int main (){
+
+	uint8 temp;
+	LCD_init();
+	DcMotor_init();
+
+	LCD_displayStringRowColumn(0,2,"FAN is   ");
+	LCD_displayStringRowColumn(1,2,"TEMP is :125C");
+while (1){
+
+}
+
+}
+

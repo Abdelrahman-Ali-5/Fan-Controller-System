@@ -1,0 +1,34 @@
+20:14:17 **** Incremental Build of configuration Debug for project Mini_Project3 ****
+make all 
+Building file: ../DC_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"DC_motor.d" -MT"DC_motor.o" -c -o "DC_motor.o" "../DC_motor.c"
+Finished building: ../DC_motor.c
+ 
+Building target: Mini_Project3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Mini_Project3.map -mmcu=atmega32 -o "Mini_Project3.elf"  ./DC_motor.o ./Mini_project3_test.o ./PWM.o ./adc.o ./gpio.o ./lcd.o ./lm35_sensor.o   
+Finished building target: Mini_Project3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Mini_Project3.elf  >"Mini_Project3.lss"
+Finished building: Mini_Project3.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Mini_Project3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9586 bytes (29.3% Full)
+(.text + .data + .bootloader)
+
+Data:        296 bytes (14.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:14:18 Build Finished. 0 errors, 0 warnings. (took 1s.364ms)
+

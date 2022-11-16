@@ -1,0 +1,43 @@
+/*
+ * Mini_project3_test.c
+ *
+ *  Created on: Oct 6, 2022
+ *      Author: Abdelrahman Ali Mohamed
+ */
+
+
+#include "lcd.h"
+#include "DC_motor.h"
+
+
+int main (){
+
+	uint8 temp;
+	ADC_ConfigType ADC_configuration = {AREF,PRESCALER_8};
+	LCD_init();
+	DcMotor_init();
+	ADC_init(&ADC_configuration);
+	LCD_displayStringRowColumn(0,2,"FAN is   ");
+	LCD_displayStringRowColumn(1,2,"TEMP is :   C");
+
+while (1){
+
+	temp = LM35_getTemperature();
+	LCD_moveCursor(1,11);
+	if(temp >= 100)
+	{
+				LCD_intgerToString(temp);
+	}
+		else
+	{
+				LCD_intgerToString(temp);
+				/* In case the digital value is two or one digits print space in the next digit place */
+				LCD_displayCharacter(' ');
+	}
+	}
+
+
+	}
+
+}
+

@@ -1,0 +1,24 @@
+/*
+ * DC_motor.c
+ *
+ *  Created on: Oct 6, 2022
+ *      Author: Abdelrahman Ali Mohamed
+ */
+
+#include "DC_motor.h"
+
+
+void DcMotor_init(void){
+
+	/*
+	 * Initialize the motors pins as output pins
+	 */
+	GPIO_setupPinDirection(MOTOR_OUTPUT1_PORT_ID,MOTOR_OUTPUT1_PIN_ID,PIN_OUTPUT);
+	GPIO_setupPinDirection(MOTOR_OUTPUT2_PORT_ID,MOTOR_OUTPUT2_PIN_ID,PIN_OUTPUT);
+
+	/*
+	* Initialize the motor to be at stop mode at the beginning
+	*/
+	CLEAR_BIT(MOTOR_OUTPUT1_PORT_ID,MOTOR_OUTPUT1_PIN_ID);
+	CLEAR_BIT(MOTOR_OUTPUT2_PORT_ID,MOTOR_OUTPUT2_PIN_ID);
+}

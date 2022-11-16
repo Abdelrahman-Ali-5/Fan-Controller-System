@@ -1,0 +1,24 @@
+/*
+ * Mini_project3_test.c
+ *
+ *  Created on: Oct 6, 2022
+ *      Author: Abdelrahman Ali Mohamed
+ */
+
+
+#include "lcd.h"
+#include "DC_motor.h"
+
+
+int main (){
+
+	LCD_init();
+	LCD_displayString("KOLLALY");
+	DcMotor_init();
+	DcMotor_Rotate(CW,0);
+while (1){
+
+}
+
+}
+
